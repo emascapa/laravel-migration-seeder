@@ -14,5 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+
+    //dd(config('db'));
+
     return view('welcome');
 });

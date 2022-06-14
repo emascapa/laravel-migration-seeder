@@ -20,12 +20,12 @@ class CreateTripsTable extends Migration
             $table->string('title', 50);
             $table->string('place', 100)->nullable();
             $table->decimal('price', 9, 2);
-            $table->string('image')->default('http://www.staticwhich.co.uk/static/images/products/no-image/no-image-available.png');
+            $table->string('image')->nullable()->default('http://www.staticwhich.co.uk/static/images/products/no-image/no-image-available.png');
             $table->date('starting_date');
             $table->date('ending_date');
             $table->smallInteger('max_participants')->nullable();
-            $table->smallInteger('discount')->default(0);
-            $table->boolean('is_available')->default(1);
+            $table->smallInteger('discount')->nullable()->default(0);
+            $table->boolean('is_available')->nullable()->default(1);
             $table->timestamps();
 
 

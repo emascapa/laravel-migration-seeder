@@ -8,7 +8,7 @@ use Illuminate\Database\Seeder;
 class TripsTableSeeder extends Seeder
 {
 
-    
+
     /**
      * Run the database seeds.
      *
@@ -19,20 +19,39 @@ class TripsTableSeeder extends Seeder
         //
         $trips = config('db.trips');
 
-        foreach($trips as $trip) {
+        foreach ($trips as $trip) {
+
             $newTrip = new Trip();
+
             $newTrip->title = $trip['title'];
-            $newTrip->place = $trip['place'];
+
+            if (isset($trip['place'])) {
+                $newTrip->place = $trip['place'];
+            }
+
             $newTrip->price = $trip['price'];
-            $newTrip->image = $trip['image'];
+
+            if (isset($trip['image'])) {
+                $newTrip->image = $trip['image'];
+            }
+
             $newTrip->starting_date = $trip['starting_date'];
+
             $newTrip->ending_date = $trip['ending_date'];
-            $newTrip->max_participants = $trip['max_participants'];
-            $newTrip->discount = $trip['discount'];
-            $newTrip->is_available = $trip['is_available'];
+
+            if (isset($trip['max_participants'])) {
+                $newTrip->max_participants = $trip['max_participants'];
+            }
+
+            if (isset($trip['discount'])) {
+                $newTrip->discount = $trip['discount'];
+            }
+
+            if (isset($trip['is_available'])) {
+                $newTrip->is_available = $trip['is_available'];
+            }
 
             $newTrip->save();
         }
-
     }
 }

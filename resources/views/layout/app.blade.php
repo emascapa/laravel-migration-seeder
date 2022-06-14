@@ -20,6 +20,11 @@
               <a class="nav-link" href="#">Reviews</a>
               <a class="nav-link disabled" href="#">Invita un amico</a>
             </nav>
+
+            <div class="py-4 px-5 bg-light">
+                    <h1 class="display-4">Pippo Travel Agency</h1>
+                    <p class="lead">ciaone</p>
+            </div>
         </header>
 
         <main>

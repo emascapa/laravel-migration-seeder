@@ -11,9 +11,11 @@ class PageController extends Controller
 {
     //
 
-    public function index() {
+    public function home() {
 
         $trips = Trip::all();
+
+        //dd($trips);
 
         return view('home', compact('trips'));
     }
